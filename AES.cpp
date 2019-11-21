@@ -41,40 +41,40 @@ int main(int argc, char* argv[])
         printf(("%02X%c"),bInput[i-1], i % 4 == 0 ? '\n' : ' ');
     }
 
-    // KeyExpansion(bKey, bExpKey);
-    // ComputeTBoxes();
-    // AesEncyption(bInput, bExpKey);
-
-    // // Print Key
-    // printf("\n\nKey\n");
-    // for(int i = 1; i<=16; i++){
-    //     printf("%02X%c", bKey[i-1], i % 4 == 0 ? '\n' : ' ');
-    // }
-    // // Print Ciphertext
-    // printf("\n\nCiphertext\n");
-    // for(int i = 1; i<=16; i++){
-    //     printf("%02X%c" , bInput[i-1], i % 4 == 0 ? '\n' : ' ');
-    // }
-
-    // ComputeInvTBoxes();
-    // AesDecryption(bInput, bExpKey);
-
-    // printf("\n\nDecrypted text\n");
-    // //Print decrypted
-    // for(int i = 1; i<=16; i++){
-    //     printf(("%02X%c"),bInput[i-1], i % 4 == 0 ? '\n' : ' ');
-    // }
-
+    KeyExpansion(bKey, bExpKey);
     ComputeTBoxes();
+    AesEncyption(bInput, bExpKey);
+
+    // Print Key
+    printf("\n\nKey\n");
+    for(int i = 1; i<=16; i++){
+        printf("%02X%c", bKey[i-1], i % 4 == 0 ? '\n' : ' ');
+    }
+    // Print Ciphertext
+    printf("\n\nCiphertext\n");
+    for(int i = 1; i<=16; i++){
+        printf("%02X%c" , bInput[i-1], i % 4 == 0 ? '\n' : ' ');
+    }
+
     ComputeInvTBoxes();
+    AesDecryption(bInput, bExpKey);
 
-    TBoxLUP(bInput);
-    InvTBoxLUP(bInput);
-
-    printf("\n\nDecrypted ciphertext\n");
+    printf("\n\nDecrypted text\n");
+    //Print decrypted
     for(int i = 1; i<=16; i++){
         printf(("%02X%c"),bInput[i-1], i % 4 == 0 ? '\n' : ' ');
     }
+
+//     ComputeTBoxes();
+//     ComputeInvTBoxes();
+
+//     TBoxLUP(bInput);
+//     InvTBoxLUP(bInput);
+
+//     printf("\n\nDecrypted ciphertext\n");
+//     for(int i = 1; i<=16; i++){
+//         printf(("%02X%c"),bInput[i-1], i % 4 == 0 ? '\n' : ' ');
+//     }
 
     return 0;
 }
