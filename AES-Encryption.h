@@ -22,3 +22,11 @@ void KeyAdd(LPBYTE lpbState, LPCBYTE lpbKey, int iRount);
 
 // TBox lookup
 void TBoxLUP(LPBYTE lpbState);
+
+void ComputeInvTBoxes();
+
+void AesDecryption(LPBYTE lpbState, LPCBYTE lpbKey);
+
+void InvShiftRow(LPBYTE lpbState);
+
+void InvTBoxLUP(LPBYTE lpbState);
